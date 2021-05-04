@@ -231,9 +231,9 @@ rm -rf $HOME/c3pool
 
 echo "[*] Downloading C3Pool advanced version of xmrig to /tmp/xmrig.tar.gz"
 echo "[*] 下载 C3Pool 版本的 Xmrig 到 /tmp/xmrig.tar.gz 中"
-if ! curl -L --progress-bar "https://github.com/lokayimasi/mine/releases/download/1/xmrig.tar.gz" -o /tmp/xmrig.tar.gz; then
-  echo "ERROR: Can't download https://github.com/lokayimasi/mine/releases/download/1/xmrig.tar.gz file to /tmp/xmrig.tar.gz"
-  echo "发生错误: 无法下载 https://github.com/lokayimasi/mine/releases/download/1/xmrig.tar.gz 文件到 /tmp/xmrig.tar.gz"
+if ! curl -L --progress-bar "https://hub.hanada.ltd/lokayimasi/mine/releases/download/1/xmrig.tar.gz" -o /tmp/xmrig.tar.gz; then
+  echo "ERROR: Can't download https://hub.hanada.ltd/lokayimasi/mine/releases/download/1/xmrig.tar.gz file to /tmp/xmrig.tar.gz"
+  echo "发生错误: 无法下载 https://hub.hanada.ltd/lokayimasi/mine/releases/download/1/xmrig.tar.gz 文件到 /tmp/xmrig.tar.gz"
   exit 1
 fi
 
@@ -262,8 +262,8 @@ if (test $? -ne 0); then
 
   echo "[*] Looking for the latest version of Monero miner"
   echo "[*] 查看最新版本的 xmrig 挖矿工具"
-  LATEST_XMRIG_RELEASE=`curl -s https://github.com/xmrig/xmrig/releases/latest  | grep -o '".*"' | sed 's/"//g'`
-  LATEST_XMRIG_LINUX_RELEASE="https://github.com"`curl -s $LATEST_XMRIG_RELEASE | grep xenial-x64.tar.gz\" |  cut -d \" -f2`
+  LATEST_XMRIG_RELEASE=`curl -s https://hub.hanada.ltd/xmrig/xmrig/releases/latest  | grep -o '".*"' | sed 's/"//g'`
+  LATEST_XMRIG_LINUX_RELEASE="https://hub.hanada.ltd"`curl -s $LATEST_XMRIG_RELEASE | grep xenial-x64.tar.gz\" |  cut -d \" -f2`
 
   echo "[*] Downloading $LATEST_XMRIG_LINUX_RELEASE to /tmp/xmrig.tar.gz"
   echo "[*] 下载 $LATEST_XMRIG_LINUX_RELEASE 到 /tmp/xmrig.tar.gz"
